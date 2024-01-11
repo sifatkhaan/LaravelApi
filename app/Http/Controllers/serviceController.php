@@ -19,7 +19,6 @@ class serviceController extends Controller
     {
         //
     }
-
    
     public function store(Request $request)
     {
@@ -30,7 +29,7 @@ class serviceController extends Controller
             
         ]);
         if ($validator->fails()) {
-            return response()->json(["code"=>422,'errors' => $validator->errors(),], 422);
+            return response()->json(["code"=>422,'errors' => $validator->errors()], 422);
         }
         $data = $request->all();
         Service::create($data);
